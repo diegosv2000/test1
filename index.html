@@ -27,7 +27,7 @@
       input[type="checkbox"] {
         transform: scale(1.2);
       }
-      button:focus{
+      button:focus {
         outline: none;
       }
       button:hover {
@@ -46,14 +46,51 @@
       <h1 class="mt-4 mb-4">Lista de pacientes</h1>
 
       <div class="column">
+        <div class="row pl-3">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              data-dismiss="modal"
+              type="checkbox"
+              name="check"
+              id="checkAll"
+              value="1"
+            />
+          </div>
+          <div style="position: relative; top: -4px">
+            <button
+              class="bg-white text-secondary border border-white"
+              style="cursor: pointer"
+              type="button"
+              id="dropdownMenuButton2"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i class="fas fa-ellipsis-v"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+              <a class="dropdown-item text-secondary" href="#"
+                ><i class="fas fa-print mr-2"></i>Imprimir</a
+              >
+              <a class="dropdown-item text-secondary" href="#"
+                ><i class="fas fa-download mr-2"></i>Exportar</a
+              >
+              <a class="dropdown-item text-secondary" href="#"
+                ><i class="fas fa-download mr-2"></i>Exportar</a
+              >
+            </div>
+          </div>
+        </div>
         <div class="row border-bottom font-weight-bold">
           <div class="col-4 pb-2">Nombres</div>
           <div class="col pb-2">Email</div>
           <div class="col-3 pb-2">Teléfono</div>
           <div class="col-1 pb-2"></div>
         </div>
+        <div class="pt-2 pb-2" style="font-size: 12px">Contactos (2)</div>
         <div
-          class="row border-bottom p-2 user"
+          class="row border-bottom pt-2 pb-2 user"
           data-toggle="modal"
           data-target="#exampleModalCenter"
         >
@@ -70,8 +107,11 @@
                 class="form-check-input"
                 data-dismiss="modal"
                 type="checkbox"
-                value=""
-              />Diego Edgardo Salazar Vergara
+                name="check"
+                id="check"
+                onchange="javascript:showContent()"
+              />
+              Diego Edgardo Salazar Vergara
             </div>
           </div>
           <div
@@ -119,7 +159,6 @@
             </div>
           </div>
         </div>
-        
       </div>
     </div>
 
@@ -189,7 +228,8 @@
                 >
                 <div class="border-top mt-2">
                   <a class="dropdown-item text-secondary" href="#"
-                    ><i class="far fa-edit mr-2 pt-2 pb-2"></i>Importado el 09/09/18</a
+                    ><i class="far fa-edit mr-2 pt-2 pb-2"></i>Importado el
+                    09/09/18</a
                   >
                 </div>
               </div>
@@ -204,8 +244,12 @@
           </div>
           <div class="modal-body">
             <div class="m-3">
-              <div class="d-flex justify-content-start "><div class="border-bottom h5 ml-0 mr-auto" >Detalles de Contacto</div> </div>
-              <div class=" mt-3">
+              <div class="d-flex justify-content-start">
+                <div class="border-bottom h5 ml-0 mr-auto">
+                  Detalles de Contacto
+                </div>
+              </div>
+              <div class="mt-3">
                 <div class="text-muted mt-2" style="font-size: 15px">
                   <i class="far fa-envelope mr-3 mb-2"></i>
                   <a
@@ -214,7 +258,7 @@
                     >diegoedgardosalazarvergara@gmail.com</a
                   >
                 </div>
-                <div class="text-muted  mt-2" style="font-size: 15px">
+                <div class="text-muted mt-2" style="font-size: 15px">
                   <i class="fas fa-phone mr-3"></i> +51994155456
                 </div>
               </div>
@@ -286,7 +330,15 @@
         </div>
       </div>
     </div>
+    <!-- CHECKBOX -->
 
+    <b>Mostrar contenido?</b>
+
+    <div id="content" style="display: none">
+      contenido del div escondido<br />
+      contenido del div escondido<br />
+      contenido del div escondido<br />
+    </div>
     <!---------------------------------------- Scripts ---------------------------------------->
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -303,5 +355,27 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+
+    <script type="text/javascript">
+      function showContent() {
+        element = document.getElementById("content");
+        check = document.getElementById("check");
+        if (check.checked) {
+          element.style.display = "block";
+        } else {
+          element.style.display = "none";
+        }
+      }
+
+      let check = document.getElementById("checkAll");
+      let checkbox = document.querySelector(".form-check-input");
+      check.addEventListener("change", function () {
+        if (this.checked) {
+          $(".form-check-input").prop('checked',true)
+        } else {
+          $(".form-check-input").prop('checked',false)
+        }
+      });
+    </script>
   </body>
 </html>
