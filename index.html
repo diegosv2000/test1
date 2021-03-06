@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css"
+      media="all"
+    />
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <style>
+      .user:hover {
+        background: #f4f4f4;
+        cursor: pointer;
+      }
+      input[type="checkbox"] {
+        transform: scale(1.2);
+      }
+      button:hover {
+        cursor: pointer;
+      }
+      a:hover {
+        cursor: pointer;
+      }
+      .btn-exportModal {
+        border: none;
+        color: rgb(38, 132, 255);
+        background: none;
+      }
+    </style>
+    <div class="container">
+      <h1 class="mt-4 mb-4">Lista de pacientes</h1>
+
+      <div class="column">
+        <div class="row border-bottom font-weight-bold">
+          <div class="col-4 pb-2">Nombres</div>
+          <div class="col pb-2">Email</div>
+          <div class="col-3 pb-2">Teléfono</div>
+          <div class="col-1 pb-2"></div>
+        </div>
+        <div
+          class="row border-bottom p-2 user"
+          data-toggle="modal"
+          data-target="#exampleModalCenter"
+        >
+          <div
+            class="col-4"
+            style="
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+            "
+          >
+            <div class="form-check" onclick="console.log('XD')">
+              <input
+                class="form-check-input"
+                data-dismiss="modal"
+                type="checkbox"
+                value=""
+              />Diego Edgardo Salazar Vergara
+            </div>
+          </div>
+          <div
+            class="col"
+            style="
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+            "
+          >
+            diegoedgardosalazarvergara@gmail.com
+          </div>
+          <div class="col-3">994155456</div>
+          <div class="col-1">
+            <div class="dropdown">
+              <button
+                class="bg-white border border border-white text-secondary"
+                data-dismiss="modal"
+                style="cursor: pointer"
+              >
+                <i class="fas fa-pen"></i>
+              </button>
+              <button
+                class="bg-white text-secondary border border-white"
+                style="cursor: pointer"
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-ellipsis-v"></i>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item text-secondary" href="#"
+                  ><i class="fas fa-print mr-2"></i>Imprimir</a
+                >
+                <a class="dropdown-item text-secondary" href="#"
+                  ><i class="fas fa-download mr-2"></i>Exportar</a
+                >
+                <a class="dropdown-item text-secondary" href="#"
+                  ><i class="fas fa-download mr-2"></i>Exportar</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row border-bottom p-2 user">
+          <div
+            class="col-4"
+            style="
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+            "
+          >
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" />Maria
+              Fernanda Maldonado Rivera
+            </div>
+          </div>
+          <div
+            class="col"
+            style="
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+            "
+          >
+            mmaldonado@gmail.com
+          </div>
+          <div class="col-3">987654321</div>
+          <div class="col-1">
+            <div class="dropdown">
+              <button
+                class="bg-white border border border-white text-secondary"
+                data-dismiss="modal"
+                style="cursor: pointer"
+              >
+                <i class="fas fa-pen"></i>
+              </button>
+              <button
+                class="bg-white text-secondary border border-white"
+                style="cursor: pointer"
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-ellipsis-v"></i>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div
+              class="row d-flex justify-content-center align-items-center ml-1"
+            >
+              <div
+                class="d-flex justify-content-center align-items-center rounded-circle bg-light text-secondary"
+                style="width: 50px; height: 50px; font-size: 30px"
+              >
+                <i class="fas fa-user"></i>
+              </div>
+              <div class="d-flex justify-content-start flex-column ml-3">
+                <div class="text-dark h5">Diego Edgardo Salazar Vergara</div>
+                <div
+                  class="border bg-light pl-2 pr-2 mr-auto text-secondary"
+                  style="border-radius: 20px; font-size: 10px"
+                >
+                  Importado el 10/8
+                </div>
+              </div>
+            </div>
+            <div>
+              <button
+                class="bg-white border border border-white text-secondary"
+                data-dismiss="modal"
+              >
+                <i class="fas fa-pen"></i>
+              </button>
+              <button
+                class="bg-white text-secondary border border-white"
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-ellipsis-v"></i>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item text-secondary"
+                  ><i class="fas fa-print mr-3 pt-2 pb-2"></i>Imprimir</a
+                >
+                <a
+                  class="dropdown-item text-secondary"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter2"
+                  ><i class="fas fa-download mr-3"></i>Exportar</a
+                >
+                <a class="dropdown-item text-secondary" href="#"
+                  ><i class="fas fa-folder-open mr-3 pt-2 pb-2"></i>Ocultar</a
+                >
+                <a class="dropdown-item text-secondary" href="#"
+                  ><i class="far fa-trash-alt mr-3 pt-2 pb-2"></i>Delete</a
+                >
+                <div class="border-top mt-2">
+                  <a class="dropdown-item text-secondary" href="#"
+                    ><i class="far fa-edit mr-2 pt-2 pb-2"></i>Importado el 09/09/18</a
+                  >
+                </div>
+              </div>
+              <button
+                type="button"
+                class="bg-white text-secondary border border-white text-secondary"
+                data-dismiss="modal"
+              >
+                <!-- <span aria-hidden="true">&times;</span> -->
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div>
+              <div class="h5">Detalles de Contacto</div>
+              <div class="ml-2">
+                <div class="text-muted" style="font-size: 15px">
+                  <i class="far fa-envelope mr-2 mb-2"></i>
+                  <a
+                    href="https://mail.google.com/mail/u/0/#inbox"
+                    target="_blank"
+                    >diegoedgardosalazarvergara@gmail.com</a
+                  >
+                </div>
+                <div class="text-muted" style="font-size: 15px">
+                  <i class="fas fa-phone mr-2"></i> +51994155456
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModalCenter2"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              Exportar Contactos
+            </h5>
+          </div>
+          <div class="modal-body">
+            <div class="form-check mb-2">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="csv1"
+              />
+              <label class="form-check-label" for="csv1"> Google CSV </label>
+            </div>
+            <div class="form-check mb-2">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="csv2"
+              />
+              <label class="form-check-label" for="csv2"> Outlook CSV </label>
+            </div>
+            <div class="form-check mb-2">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="csv3"
+              />
+              <label class="form-check-label" for="csv3">
+                vCard(for iOS Contacts)
+              </label>
+            </div>
+          </div>
+          <div class="modal-footer border-0">
+            <button
+              type="button"
+              class="btn-exportModal font-weight-bold ml-2"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn-exportModal font-weight-bold ml-2">
+              Save changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!---------------------------------------- Scripts ---------------------------------------->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
