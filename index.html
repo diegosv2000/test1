@@ -27,6 +27,9 @@
       input[type="checkbox"] {
         transform: scale(1.2);
       }
+      button:focus{
+        outline: none;
+      }
       button:hover {
         cursor: pointer;
       }
@@ -62,7 +65,7 @@
               overflow: hidden;
             "
           >
-            <div class="form-check" onclick="console.log('XD')">
+            <div class="form-check">
               <input
                 class="form-check-input"
                 data-dismiss="modal"
@@ -116,59 +119,7 @@
             </div>
           </div>
         </div>
-        <div class="row border-bottom p-2 user">
-          <div
-            class="col-4"
-            style="
-              text-overflow: ellipsis;
-              white-space: nowrap;
-              overflow: hidden;
-            "
-          >
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" />Maria
-              Fernanda Maldonado Rivera
-            </div>
-          </div>
-          <div
-            class="col"
-            style="
-              text-overflow: ellipsis;
-              white-space: nowrap;
-              overflow: hidden;
-            "
-          >
-            mmaldonado@gmail.com
-          </div>
-          <div class="col-3">987654321</div>
-          <div class="col-1">
-            <div class="dropdown">
-              <button
-                class="bg-white border border border-white text-secondary"
-                data-dismiss="modal"
-                style="cursor: pointer"
-              >
-                <i class="fas fa-pen"></i>
-              </button>
-              <button
-                class="bg-white text-secondary border border-white"
-                style="cursor: pointer"
-                type="button"
-                id="dropdownMenuButton"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <i class="fas fa-ellipsis-v"></i>
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </div>
 
@@ -247,25 +198,24 @@
                 class="bg-white text-secondary border border-white text-secondary"
                 data-dismiss="modal"
               >
-                <!-- <span aria-hidden="true">&times;</span> -->
                 <i class="fas fa-times"></i>
               </button>
             </div>
           </div>
           <div class="modal-body">
-            <div>
-              <div class="h5">Detalles de Contacto</div>
-              <div class="ml-2">
-                <div class="text-muted" style="font-size: 15px">
-                  <i class="far fa-envelope mr-2 mb-2"></i>
+            <div class="m-3">
+              <div class="d-flex justify-content-start "><div class="border-bottom h5 ml-0 mr-auto" >Detalles de Contacto</div> </div>
+              <div class=" mt-3">
+                <div class="text-muted mt-2" style="font-size: 15px">
+                  <i class="far fa-envelope mr-3 mb-2"></i>
                   <a
                     href="https://mail.google.com/mail/u/0/#inbox"
                     target="_blank"
                     >diegoedgardosalazarvergara@gmail.com</a
                   >
                 </div>
-                <div class="text-muted" style="font-size: 15px">
-                  <i class="fas fa-phone mr-2"></i> +51994155456
+                <div class="text-muted  mt-2" style="font-size: 15px">
+                  <i class="fas fa-phone mr-3"></i> +51994155456
                 </div>
               </div>
             </div>
@@ -274,7 +224,7 @@
       </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Modal 2 -->
     <div
       class="modal fade"
       id="exampleModalCenter2"
