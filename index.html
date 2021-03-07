@@ -56,6 +56,25 @@
               id="checkAll"
               value="1"
             />
+            <i
+              class="fas fa-caret-down text-secondary mr-2"
+              id="dropdownMenu3"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            ></i>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu3">
+              <button class="dropdown-item" type="button" onclick="SelectAll()">
+                Todos
+              </button>
+              <button
+                class="dropdown-item"
+                type="button"
+                onclick="SelectNone()"
+              >
+                Ninguno
+              </button>
+            </div>
           </div>
           <div style="position: relative; top: -4px">
             <button
@@ -73,11 +92,14 @@
               <a class="dropdown-item text-secondary" href="#"
                 ><i class="fas fa-print mr-2"></i>Imprimir</a
               >
-              <a class="dropdown-item text-secondary" href="#"
+              <a
+                class="dropdown-item text-secondary"
+                data-toggle="modal"
+                data-target="#exampleModalCenter2"
                 ><i class="fas fa-download mr-2"></i>Exportar</a
               >
               <a class="dropdown-item text-secondary" href="#"
-                ><i class="fas fa-download mr-2"></i>Exportar</a
+                ><i class="far fa-trash-alt mr-3 pt-2 pb-2"></i>Eliminar</a
               >
             </div>
           </div>
@@ -88,11 +110,12 @@
           <div class="col-3 pb-2">Teléfono</div>
           <div class="col-1 pb-2"></div>
         </div>
-        <div class="pt-2 pb-2" style="font-size: 12px">Contactos (2)</div>
+        <div class="pt-2 pb-2" style="font-size: 12px">Contactos (1)</div>
         <div
           class="row border-bottom pt-2 pb-2 user"
           data-toggle="modal"
           data-target="#exampleModalCenter"
+          id="paciente1"
         >
           <div
             class="col-4"
@@ -109,9 +132,8 @@
                 type="checkbox"
                 name="check"
                 id="check"
-                onchange="javascript:showContent()"
               />
-              Diego Edgardo Salazar Vergara
+              <div id="name1">Diego Edgardo Salazar Vergara</div>
             </div>
           </div>
           <div
@@ -121,16 +143,19 @@
               white-space: nowrap;
               overflow: hidden;
             "
+            id="email1"
           >
             diegoedgardosalazarvergara@gmail.com
           </div>
-          <div class="col-3">994155456</div>
+          <div class="col-3" id="phone1">994155456</div>
           <div class="col-1">
             <div class="dropdown">
               <button
                 class="bg-white border border border-white text-secondary"
-                data-dismiss="modal"
                 style="cursor: pointer"
+                data-toggle="modal"
+                data-target="#exampleModal3"
+                data-whatever="@getbootstrap"
               >
                 <i class="fas fa-pen"></i>
               </button>
@@ -146,14 +171,19 @@
                 <i class="fas fa-ellipsis-v"></i>
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item text-secondary" href="#"
+                <a
+                  class="dropdown-item text-secondary"
+                  href="javascript:imprSelec()"
                   ><i class="fas fa-print mr-2"></i>Imprimir</a
                 >
-                <a class="dropdown-item text-secondary" href="#"
-                  ><i class="fas fa-download mr-2"></i>Exportar</a
+                <a
+                  class="dropdown-item text-secondary"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter2"
+                  ><i class="fas fa-download mr-3"></i>Exportar</a
                 >
                 <a class="dropdown-item text-secondary" href="#"
-                  ><i class="fas fa-download mr-2"></i>Exportar</a
+                  ><i class="far fa-trash-alt mr-3 pt-2 pb-2"></i>Eliminar</a
                 >
               </div>
             </div>
@@ -196,7 +226,9 @@
             <div>
               <button
                 class="bg-white border border border-white text-secondary"
-                data-dismiss="modal"
+                data-toggle="modal"
+                data-target="#exampleModal3"
+                data-whatever="@getbootstrap"
               >
                 <i class="fas fa-pen"></i>
               </button>
@@ -211,7 +243,9 @@
                 <i class="fas fa-ellipsis-v"></i>
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item text-secondary"
+                <a
+                  class="dropdown-item text-secondary"
+                  href="javascript:imprSelec()"
                   ><i class="fas fa-print mr-3 pt-2 pb-2"></i>Imprimir</a
                 >
                 <a
@@ -224,7 +258,7 @@
                   ><i class="fas fa-folder-open mr-3 pt-2 pb-2"></i>Ocultar</a
                 >
                 <a class="dropdown-item text-secondary" href="#"
-                  ><i class="far fa-trash-alt mr-3 pt-2 pb-2"></i>Delete</a
+                  ><i class="far fa-trash-alt mr-3 pt-2 pb-2"></i>Eliminar</a
                 >
                 <div class="border-top mt-2">
                   <a class="dropdown-item text-secondary" href="#"
@@ -330,15 +364,72 @@
         </div>
       </div>
     </div>
-    <!-- CHECKBOX -->
+    <!-- Modal 3 -->
 
-    <b>Mostrar contenido?</b>
-
-    <div id="content" style="display: none">
-      contenido del div escondido<br />
-      contenido del div escondido<br />
-      contenido del div escondido<br />
+    <div
+      class="modal fade"
+      id="exampleModal3"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Editar contacto</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label"
+                  >Nombre:</label
+                >
+                <input type="text" class="form-control" id="recipient-name" />
+              </div>
+              <div class="form-group">
+                <label for="recipient-email" class="col-form-label"
+                  >Email:</label
+                >
+                <input type="email" class="form-control" id="recipient-email" />
+              </div>
+              <div class="form-group">
+                <label for="recipient-phone" class="col-form-label"
+                  >Número:</label
+                >
+                <input
+                  type="number"
+                  min="0"
+                  class="form-control"
+                  id="recipient-phone"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button type="button" class="btn btn-primary">
+              Guardar cambios
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
+
     <!---------------------------------------- Scripts ---------------------------------------->
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -371,11 +462,51 @@
       let checkbox = document.querySelector(".form-check-input");
       check.addEventListener("change", function () {
         if (this.checked) {
-          $(".form-check-input").prop('checked',true)
+          $(".form-check-input").prop("checked", true);
         } else {
-          $(".form-check-input").prop('checked',false)
+          $(".form-check-input").prop("checked", false);
         }
       });
+      function SelectAll() {
+        $(".form-check-input").prop("checked", true);
+      }
+      function SelectNone() {
+        $(".form-check-input").prop("checked", false);
+      }
+      function imprSelec() {
+        let name = document.getElementById("name1").innerHTML;
+        let email = document.getElementById("email1").innerHTML;
+        let phone = document.getElementById("phone1").innerHTML;
+        let data1 = ` 
+        <h1>Lista</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">N°</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Email</th>
+              <th scope="col">Telefono</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>${name}</td>
+              <td>${email}</td>
+              <td>${phone}</td>
+            </tr>
+          </tbody>
+        </table>
+        `;
+
+        // var ficha = document.getElementById(nombre);
+        var ventimp = window.open(" ", "popimpr");
+        // ventimp.document.write(ficha.innerHTML);
+        ventimp.document.write(data1);
+        ventimp.document.close();
+        ventimp.print();
+        ventimp.close();
+      }
     </script>
   </body>
 </html>
